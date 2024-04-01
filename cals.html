@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>simple calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center><h1>BASIC CALCULATOR</h1></center><br><br>
+<div class="calculator">
+ <input type="text" placeholder="0" id="out" class="display">
+
+    <button class="button" onclick="disp('7')">7</button>
+    <button class="button" onclick="disp('8')">8</button>
+    <button class="button" onclick="disp('9')">9</button>
+    <button class="slash" onclick="disp('/')">/</button>
+    <button class="button" onclick="disp('4')">4</button>
+    <button class="button" onclick="disp('5')">5</button>
+    <button class="button" onclick="disp('6')">6</button>
+    <button class="multiple" onclick="disp('*')">*</button>
+    <button class="button" onclick="disp('1')">1</button>
+    <button class="button" onclick="disp('2')">2</button>
+    <button class="button" onclick="disp('3')">3</button>
+    <button class="minus" onclick="disp('-')">-</button>
+    <button class="button" onclick="disp('0')">0</button>
+    <button class="button" onclick="disp('.')">.</button>
+    <button class="moduls" onclick="disp('%')">%</button>
+    <button class="plus" onclick="disp('+')">+</button>
+    <button class="close" onclick="cl()">C</button>
+    <button class="equal" onclick="calc()">=</button>
+    <button class="button" onclick="del()">DEL</button>
+</div>
+<script>
+    let output = document.getElementById("out");
+    function disp(num){
+        output.value += num;
+    }
+    function calc(){
+        try{
+        output.value = eval(output.value);
+        }
+        catch(err){
+            alert(Invalid);
+        }
+    }
+    function cl(){
+        output.value = "";
+    }
+    function del(){
+        output.value = output.value.slice(0,-1);
+    }
+</script>
+</body>
+</html>
